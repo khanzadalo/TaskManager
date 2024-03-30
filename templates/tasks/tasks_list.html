@@ -1,0 +1,33 @@
+{% load static %}
+{% include 'tasks/main.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<section class="vh-100" style="background-color: #C0C0C0;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4">
+
+            <p class="mb-2"><span class="h2 me-2">Tasks list</span> <span
+                class="badge bg-danger">checklist</span></p>
+            <p class="text-muted pb-2">{{ current_date }}</p>
+
+            <ul class="list-group rounded-0">
+              {% for task in tasks %}
+              <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                <input type="checkbox" {% if task.completed %}checked{% endif %} aria-label="..." />
+                <span {% if task.completed %}class="text-decoration-line-through"{% endif %}>
+                  <a href="/tasks_list/{{ task.id }}/">{{ task.title }}</a>
+                </span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

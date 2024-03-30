@@ -1,0 +1,19 @@
+{% load static %}
+{% include 'tasks/main.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="detail-container">
+    <h1>{{ task_id.title }}</h1>
+    <p class="detail-info">Description: {{ task_id.description }}</p>
+    <p class="detail-info">Status: {{ task_id.status }}</p>
+    <p class="detail-info">Created at: {{task_id.created_at}}</p>
+    <p class="detail-info">Completed at: {{task_id.completed_at }}</p>
+
+    <hr>
+
+    <div class="button-container">
+        <button><a href="/tasks_list/{{task_id.id}}/update">Edit </a></button>
+        <button><a href="/tasks_list/{{task_id.id}}/delete">Delete</a></button>
+    </div>
+
+    <hr>
+</div>

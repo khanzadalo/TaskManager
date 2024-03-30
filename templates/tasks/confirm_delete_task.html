@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Confirmation</title>
+
+</head>
+<body>
+    <h1>Are you sure??</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit">Yes</button>
+        <button class="no"><a href="/">No</a></button>
+    </form>
+</body>
+</html>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #C0C0C0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        button a {
+            color: white;
+        }
+
+        button.no {
+            background-color: #e74c3c;
+        }
+    </style>

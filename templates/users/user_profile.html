@@ -1,0 +1,36 @@
+{% include 'tasks/main.html' %}
+
+{% block content %}
+<div class="card border-0">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-md-3">
+				<figure>
+					<img src="{{ profile.avatar.url }}" class="img-fluid rounded-0" alt="{{ profile }}">
+				</figure>
+			</div>
+			<div class="col-md-9">
+				 <h5 class="card-title">
+					{{ profile }}
+				</h5>
+				<div class="card-text">
+					<ul>
+						<h3>
+							Profile
+						</h3>
+						<img src="{{ user.avatar.url }}" width="200" alt="Avatar">
+						<li>Username: {{ user.username }}</li>
+						<li>First name: {{ user.first_name }}</li>
+						<li>Last name: {{ user.last_name }}</li>
+						<li>Bio: {{ user.bio }}</li>
+						<li>Email: {{ user.email }}</li>
+						<li>Joined date: {{ user.joined_date }}</li>
+					</ul>
+				<a href="users/profile_edit" class="btn btn-sm btn-primary">Edit profile</a>
+				<a href="users/logout" class="button">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
